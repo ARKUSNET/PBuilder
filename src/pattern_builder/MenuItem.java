@@ -2,6 +2,8 @@ package pattern_builder;
 
 import pattern_builder.component.MenuComponent;
 
+import java.util.Iterator;
+
 /**
  * Created by a.kuspakov on 11.10.2016.
  */
@@ -16,6 +18,10 @@ public class MenuItem extends MenuComponent {
         this.description = description;
         this.vegetarian = vegetarian;
         this.price = price;
+    }
+
+    public Iterator createIterator(){
+        return new NullIterator();
     }
 
     public String getName() {
@@ -35,7 +41,7 @@ public class MenuItem extends MenuComponent {
     }
 
     public void print(){
-        System.out.println("  " + getName());
+        System.out.print("  " + getName());
         if(isVegetarian()){
             System.out.println("(v)");
         }

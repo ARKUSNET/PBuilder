@@ -9,6 +9,7 @@ import java.util.Iterator;
  * Created by Administrator on 12.10.2016.
  */
 public class Menu extends MenuComponent {
+    Iterator iterator = null;
     ArrayList menuComponents = new ArrayList();
     String name;
     String description;
@@ -16,6 +17,13 @@ public class Menu extends MenuComponent {
     public Menu(String name, String description){
         this.name = name;
         this.description = description;
+    }
+
+    public Iterator createIterator(){
+        if(iterator == null){
+            iterator = new CompositeIterator(menuComponents.iterator());
+        }
+        return  iterator;
     }
 
     public void add(MenuComponent menuComponent){

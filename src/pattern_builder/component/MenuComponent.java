@@ -1,5 +1,7 @@
 package pattern_builder.component;
 
+import java.util.Iterator;
+
 /**
  * Created by Administrator on 12.10.2016.
  */
@@ -36,4 +38,6 @@ public abstract class MenuComponent {
     public void print(){
         throw new UnsupportedOperationException();
     }
+
+    public abstract Iterator createIterator();
 }
